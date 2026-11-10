@@ -2,9 +2,9 @@ import type { Dictionary } from "./ca";
 
 const es: Dictionary = {
   meta: {
-    title: "Tall i a Taula · Joan, cortador de jamón para bodas y eventos",
+    title: "Tall i a Taula · Joan, cortador de jamón para bodas y eventos en Cataluña",
     description:
-      "Corte de jamón ibérico en directo para bodas y eventos. Joan lleva el arte del corte de jamón a vuestros momentos más importantes. Pedid presupuesto sin compromiso.",
+      "Corte de jamón ibérico en directo para bodas y eventos en toda Cataluña. Joan lleva el arte del corte de jamón a vuestros momentos más importantes. Pedid presupuesto sin compromiso.",
     ogAlt: "Joan cortando jamón en directo en una celebración al aire libre",
   },
   nav: {
@@ -23,7 +23,7 @@ const es: Dictionary = {
     langLabel: "Idioma",
   },
   hero: {
-    kicker: "Corte de jamón en directo · bodas y eventos",
+    kicker: "Corte de jamón en directo · bodas y eventos en Cataluña",
     titleA: "Vuestro día,",
     titleB: "un recuerdo para",
     titleHighlight: "saborear",
@@ -39,7 +39,7 @@ const es: Dictionary = {
     "Jamón ibérico seleccionado",
     "Corte artesano en directo",
     "Montaje y desmontaje incluidos",
-    "Nos desplazamos a vuestro evento",
+    "Nos desplazamos por toda Cataluña",
   ],
   about: {
     eyebrow: "¿Quiénes somos?",
@@ -92,7 +92,7 @@ const es: Dictionary = {
       { title: "Corte artesano", text: "Corte en directo, con técnica, precisión y dedicación." },
       { title: "Presentación cuidada", text: "Una estación elegante, con todo el material necesario para disfrutar de cada corte." },
       { title: "Montaje y desmontaje", text: "Preparamos el espacio de trabajo antes del servicio y recogemos el material al terminar." },
-      { title: "Desplazamiento", text: "Nos desplazamos hasta vuestro evento. Las condiciones se concretan según la ubicación." },
+      { title: "Desplazamiento", text: "Nos desplazamos a cualquier punto de Cataluña. Las condiciones se concretan según la ubicación." },
     ],
   },
   gallery: {

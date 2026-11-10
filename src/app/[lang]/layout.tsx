@@ -61,6 +61,7 @@ function jsonLd(lang: Locale, description: string) {
     logo: `${site.url}/il/logo-joan.webp`,
     telephone: site.phone.replace(/\s/g, ""),
     sameAs: [site.instagram.url],
+    areaServed: { "@type": "AdministrativeArea", name: site.areaServed },
     founder: { "@type": "Person", name: site.person },
     makesOffer: {
       "@type": "Offer",

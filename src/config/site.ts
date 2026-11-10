@@ -10,6 +10,8 @@ export const site = {
   phone: "+34 675 079 606",
   phoneHref: "tel:+34675079606",
   whatsapp: "34675079606",
+  /** Zona de servicio (datos estructurados para Google). */
+  areaServed: "Catalunya",
   instagram: {
     handle: "@Talliataula",
     url: "https://www.instagram.com/Talliataula",

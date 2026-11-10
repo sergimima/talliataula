@@ -1,8 +1,8 @@
 const ca = {
   meta: {
-    title: "Tall i a Taula · Joan, tallador de pernil per a casaments i esdeveniments",
+    title: "Tall i a Taula · Joan, tallador de pernil per a casaments i esdeveniments a Catalunya",
     description:
-      "Tall de pernil ibèric en directe per a casaments i esdeveniments. En Joan porta l'art del tall de pernil als vostres moments més importants. Demaneu pressupost sense compromís.",
+      "Tall de pernil ibèric en directe per a casaments i esdeveniments a tot Catalunya. En Joan porta l'art del tall de pernil als vostres moments més importants. Demaneu pressupost sense compromís.",
     ogAlt: "En Joan tallant pernil en directe en una celebració a l'aire lliure",
   },
   nav: {
@@ -21,7 +21,7 @@ const ca = {
     langLabel: "Idioma",
   },
   hero: {
-    kicker: "Tall de pernil en directe · casaments i esdeveniments",
+    kicker: "Tall de pernil en directe · casaments i esdeveniments a Catalunya",
     titleA: "El vostre dia,",
     titleB: "un record per",
     titleHighlight: "assaborir",
@@ -37,7 +37,7 @@ const ca = {
     "Pernil ibèric seleccionat",
     "Tall artesà en directe",
     "Muntatge i desmuntatge inclosos",
-    "Ens desplacem al vostre esdeveniment",
+    "Ens desplacem per tot Catalunya",
   ],
   about: {
     eyebrow: "Qui som?",
@@ -90,7 +90,7 @@ const ca = {
       { title: "Tall artesanal", text: "Tall en directe, amb tècnica, precisió i dedicació." },
       { title: "Presentació cuidada", text: "Una estació elegant, amb tot el material necessari per gaudir de cada tall." },
       { title: "Muntatge i desmuntatge", text: "Preparem l'espai de treball abans del servei i recollim el material en acabar." },
-      { title: "Trasllat", text: "Ens desplacem fins al vostre esdeveniment. Les condicions es concreten segons la ubicació." },
+      { title: "Trasllat", text: "Ens desplacem a qualsevol punt de Catalunya. Les condicions es concreten segons la ubicació." },
     ],
   },
   gallery: {

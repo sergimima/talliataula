@@ -95,7 +95,8 @@
 .bigImg {
   width: auto;
   height: auto;
-  max-height: calc(100dvh - 190px);
+  /* 100dvh − margen del visor (2×56) − marco (26) − pie de foto y contador (~80) */
+  max-height: calc(100dvh - 220px);
   max-width: min(86vw, 640px);
   object-fit: contain;
 }
@@ -172,6 +173,23 @@
 
   .viewer {
     padding: 64px 10px 84px;
+  }
+
+  .big {
+    padding: 8px 8px 10px;
+  }
+
+  /* 100dvh − margen del visor (64 + 84, con las flechas abajo) − marco (18) − pie de foto en 2 líneas y contador (~85) */
+  .bigImg {
+    max-height: calc(100dvh - 255px);
+    max-width: calc(100vw - 36px);
+  }
+
+  .big figcaption {
+    font-size: 1.1rem;
+    line-height: 1.25;
+    padding-top: 8px;
+    max-width: calc(100vw - 36px);
   }
 
   .prev,

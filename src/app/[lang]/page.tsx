@@ -20,7 +20,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const dict = await getDictionary(lang);
 
   return (
-    <>
+    // Contenedor en flujo normal: Next lo usa como referencia de scroll al navegar.
+    // Sin él, el primer hijo sería el enlace oculto/la cabecera fija y la página acababa abajo del todo.
+    <div className="page">
       <a href="#contingut" className="skip-link">
         {lang === "ca" ? "Anar al contingut" : "Ir al contenido"}
       </a>
@@ -37,6 +39,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </main>
       <Footer lang={lang} dict={dict} />
       <WhatsAppFloat label={dict.whatsappFloat} text={dict.quote.whatsappText} />
-    </>
+    </div>
   );
 }

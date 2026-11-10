@@ -11,7 +11,8 @@ type Props = { lang: Locale; dict: Dictionary; title: string; children: ReactNod
 
 export function LegalPage({ lang, dict, title, children }: Props) {
   return (
-    <>
+    // Contenedor en flujo normal como referencia de scroll al navegar (ver app/[lang]/page.tsx).
+    <div className="page">
       <Header lang={lang} dict={dict.nav} homeOnly />
       <main className={`container ${styles.main}`}>
         <Link href={`/${lang}`} className={styles.back}>
@@ -21,7 +22,7 @@ export function LegalPage({ lang, dict, title, children }: Props) {
         <div className={styles.body}>{children}</div>
       </main>
       <Footer lang={lang} dict={dict} />
-    </>
+    </div>
   );
 }
 
