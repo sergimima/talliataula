@@ -1,0 +1,78 @@
+.section {
+  background: linear-gradient(180deg, transparent 0, rgba(199, 221, 191, 0.35) 30%, rgba(199, 221, 191, 0.35) 100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.needs {
+  position: relative;
+  margin: 34px 0 30px auto;
+  max-width: 330px;
+  padding: 34px 30px 40px;
+  background: #f7e7c8;
+  border-radius: 46% 54% 50% 50% / 52% 46% 54% 48%;
+  background-image: repeating-linear-gradient(180deg, transparent 0, transparent 27px, rgba(184, 88, 43, 0.12) 27px, rgba(184, 88, 43, 0.12) 28px);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.needs h3 {
+  font-size: 1.7rem;
+  color: var(--terra);
+  margin-bottom: 8px;
+}
+
+.needs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-titol);
+  font-size: 1.3rem;
+  color: var(--tinta-suau);
+  line-height: 1.5;
+}
+
+.needsRomer {
+  position: absolute;
+  width: 110px;
+  height: auto;
+  right: -24px;
+  bottom: -6px;
+  transform: rotate(-35deg);
+}
+
+.direct h3 {
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+}
+
+.directButtons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.formCard {
+  background: var(--paper-light);
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 44px);
+  box-shadow: 0 24px 60px rgba(59, 46, 34, 0.14);
+  border: 2px solid var(--blanc);
+  position: relative;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .needs {
+    margin-inline: auto;
+  }
+}

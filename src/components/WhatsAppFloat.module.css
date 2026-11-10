@@ -1,0 +1,33 @@
+.float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--verd);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 0 var(--verd-fosc), 0 10px 24px rgba(59, 46, 34, 0.25);
+  transition: transform 0.2s ease;
+  animation: pop 0.5s 1.2s ease both;
+}
+
+.float svg {
+  width: 30px;
+  height: 30px;
+}
+
+.float:hover {
+  transform: translateY(-3px) rotate(-6deg);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}

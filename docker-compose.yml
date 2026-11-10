@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: .
+      secrets:
+        - envfile
+    image: talliataula-web
+    container_name: talliataula-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3011:3000"
+    # Variables en tiempo de ejecución (Resend para el formulario, etc.)
+    env_file:
+      - path: .env.local
+        required: false
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/robots.txt"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+secrets:
+  envfile:
+    file: ./.env.local

@@ -1,0 +1,103 @@
+.section {
+  padding-block: clamp(30px, 5vw, 60px) clamp(64px, 9vw, 110px);
+}
+
+.paper {
+  position: relative;
+  background: var(--paper-light);
+  border-radius: 6px;
+  padding: clamp(32px, 5vw, 60px) clamp(22px, 5vw, 64px);
+  box-shadow: var(--shadow-soft);
+  background-image: repeating-linear-gradient(180deg, transparent 0, transparent 37px, rgba(184, 88, 43, 0.08) 37px, rgba(184, 88, 43, 0.08) 38px);
+}
+
+/* Cinta adhesiva en las esquinas */
+.paper::before,
+.paper::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 32px;
+  background: rgba(210, 117, 74, 0.28);
+  top: -12px;
+}
+
+.paper::before {
+  left: 30px;
+  transform: rotate(-6deg);
+}
+
+.paper::after {
+  right: 30px;
+  transform: rotate(5deg);
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: var(--verd);
+  margin-bottom: 28px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px 48px;
+}
+
+.item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.item:last-child {
+  grid-column: 1 / -1;
+  max-width: 50%;
+}
+
+.item h3 {
+  font-size: 1.6rem;
+  color: var(--terra);
+  margin-bottom: 4px;
+}
+
+.item p {
+  margin: 0;
+  color: var(--tinta-suau);
+}
+
+.check {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  color: var(--verd);
+  margin-top: 2px;
+}
+
+.romer {
+  position: absolute;
+  width: clamp(130px, 16vw, 200px);
+  height: auto;
+  right: 20px;
+  bottom: 18px;
+  transform: rotate(-14deg);
+  opacity: 0.9;
+}
+
+@media (max-width: 760px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+
+  .item:last-child {
+    max-width: none;
+  }
+
+  .romer {
+    position: static;
+    margin: 20px 0 0 auto;
+  }
+}

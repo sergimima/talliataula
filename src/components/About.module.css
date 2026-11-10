@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(36px, 6vw, 80px);
+  align-items: center;
+}
+
+.photoCol {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+  justify-self: center;
+}
+
+.arch {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 999px 999px 22px 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-photo);
+  border: 8px solid var(--blanc);
+}
+
+.signature {
+  position: absolute;
+  right: -8px;
+  bottom: 26px;
+  font-family: var(--font-titol);
+  font-size: clamp(1.8rem, 3.4vw, 2.3rem);
+  color: var(--terra);
+  background: var(--paper);
+  padding: 2px 18px 6px;
+  border-radius: 10px;
+  transform: rotate(-5deg);
+  box-shadow: var(--shadow-soft);
+}
+
+.logo {
+  position: absolute;
+  width: clamp(90px, 11vw, 130px);
+  height: auto;
+  left: -26px;
+  top: -18px;
+  transform: rotate(-10deg);
+  filter: drop-shadow(0 8px 12px rgba(59, 46, 34, 0.18));
+}
+
+.big {
+  font-size: clamp(1.15rem, 1.9vw, 1.32rem);
+  line-height: 1.65;
+  color: var(--tinta);
+  border-left: 4px solid var(--verd-clar);
+  padding-left: 18px;
+  margin-block: 1.2em;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photoCol {
+    max-width: 360px;
+  }
+}

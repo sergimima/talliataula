@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# brainstorming companion
+/.superpowers/
+# fotos originales (pesadas, no se publican)
+/contenido/fotos-originales/
+!.env.example
+
+# capturas de revisión
+/.playwright-mcp/

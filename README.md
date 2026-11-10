@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tall i a Taula — web
 
-## Getting Started
+Web de **Joan, tallador de pernil per a casaments i esdeveniments**. Next.js 16 (App Router), TypeScript y CSS Modules, en catalán (`/ca`) y castellano (`/es`).
 
-First, run the development server:
+## Puesta en marcha
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # y rellena los valores
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Script | Qué hace |
+|---|---|
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` / `npm start` | Build de producción y servidor |
+| `npm test` | Tests (validación del formulario y envío) |
+| `npm run lint` | ESLint |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variables de entorno
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ver [`.env.example`](.env.example).
 
-## Learn More
+- **Formulario de presupuesto:** `RESEND_API_KEY`, `CONTACT_TO_EMAIL` y `CONTACT_FROM_EMAIL`. El remitente debe pertenecer a un dominio verificado en [Resend](https://resend.com) (p. ej. `talliataula.com`). Si faltan, el formulario avisa al visitante y le ofrece WhatsApp.
+- **Datos legales** (aviso legal y privacidad): `NEXT_PUBLIC_TITULAR_NOMBRE`, `NEXT_PUBLIC_TITULAR_NIF`, `NEXT_PUBLIC_TITULAR_DOMICILIO` y `NEXT_PUBLIC_CONTACTE_EMAIL`. Solo se muestran si están rellenados.
+- `NEXT_PUBLIC_SITE_URL`: URL pública, usada en el sitemap, en el canonical y en Open Graph.
 
-To learn more about Next.js, take a look at the following resources:
+## Dónde está cada cosa
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/i18n/dictionaries/ca.ts` y `es.ts`: **todos los textos** de la web.
+- `src/config/site.ts`: teléfono, WhatsApp e Instagram.
+- `src/lib/gallery.ts`: fotos de la galería y sus textos alternativos.
+- `src/components/`: una sección por componente, cada una con su `.module.css`.
+- `src/styles/globals.css`: colores, tipografía, botones y textura de papel.
+- `src/app/actions/contacte.ts`: envío del formulario (Server Action con Resend).
+- `src/proxy.ts`: redirige `/` a `/ca` o `/es` según el idioma del navegador.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Imágenes
 
-## Deploy on Vercel
+Las fotos originales están en `contenido/fotos-originales/` y no se publican (ignoradas en git). Para la web se generan versiones optimizadas:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+python scripts/extraer_ilustraciones.py   # ilustraciones del dossier PDF -> contenido/ilustraciones-dossier/
+python scripts/preparar_ilustraciones.py  # -> public/il/*.webp
+python scripts/exportar_fotos.py          # -> public/fotos/*.webp y public/og.jpg
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Edición con IA (local)
+
+`scripts/fotos_ia.py` usa **ComfyUI** en local (`http://127.0.0.1:8188`) con FLUX.2 Klein 4B:
+
+```bash
+# Foto vertical -> horizontal (se vuelve a pegar la foto original encima: el sujeto no se toca)
+python scripts/fotos_ia.py ampliar IMG_2651 --prompt "Extend this photo into a wide landscape..."
+# Eliminar un objeto solo dentro de una zona (fracciones x0,y0,x1,y1)
+python scripts/fotos_ia.py limpiar IMG_2689 --zona 0.62,0.6,1,0.95 --zona-completa --prompt "Remove the trash bin..."
+```
+
+Los resultados van a `contenido/fotos-ia/`. `exportar_fotos.py` usa automáticamente la versión limpia de una foto cuando existe. Regla: la IA solo edita fotos reales. Nada de fotos ni testimonios inventados.
+
+## Docker
+
+```bash
+cp .env.example .env.local     # rellenar (lo usa el build y el contenedor)
+docker compose up -d --build   # http://127.0.0.1:3011
+```
+
+- Escucha solo en `127.0.0.1:3011`. Para exponerlo hace falta un proxy inverso (Nginx, Caddy, Traefik) con HTTPS para `talliataula.com`.
+- `.env.local` llega al build como *secreto de BuildKit*, porque las variables `NEXT_PUBLIC_*` se incrustan en las páginas estáticas. No queda guardado en la imagen. En ejecución se carga con `env_file`.
+- Si cambias una variable `NEXT_PUBLIC_*`, reconstruye con `--build`. Las de Resend basta con reiniciar: `docker compose up -d`.
+
+## Despliegue
+
+Si no se usa Docker, lo recomendado es Vercel: importar el repositorio, añadir las variables de entorno y apuntar el dominio `talliataula.com`. Si se mantiene `talliataula.cat`, conviene redirigirlo con un 301 al `.com` para no duplicar contenido.
+
+## Fase 2
+
+Reservas con calendario. Diseño y decisiones de la fase 1: [`docs/superpowers/specs/2026-11-10-web-talliataula-design.md`](docs/superpowers/specs/2026-11-10-web-talliataula-design.md).

@@ -1,0 +1,117 @@
+.head {
+  text-align: center;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.head :global(.section-title) {
+  color: var(--verd);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(18px, 3vw, 32px);
+  counter-reset: step;
+  position: relative;
+}
+
+/* Línea discontinua que une los pasos */
+.list::before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 12%;
+  right: 12%;
+  border-top: 3px dashed var(--crema);
+  z-index: 0;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  font-family: var(--font-titol);
+  font-size: 3.2rem;
+  color: var(--verd);
+  position: relative;
+  margin-bottom: 14px;
+  /* Nota de papel cuadriculado, como en el dossier */
+  background-color: #fbfaf6;
+  background-image:
+    linear-gradient(rgba(184, 88, 43, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 88, 43, 0.12) 1px, transparent 1px);
+  background-size: 11px 11px;
+  box-shadow: var(--shadow-soft);
+  transform: rotate(-3deg);
+}
+
+.step:nth-child(even) .num {
+  transform: rotate(3deg);
+}
+
+.num::before {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 18px;
+  background: rgba(210, 117, 74, 0.35);
+  top: -6px;
+  left: -14px;
+  transform: rotate(-40deg);
+}
+
+.step h3 {
+  font-size: 1.7rem;
+  color: var(--terra);
+  margin-bottom: 8px;
+}
+
+.step p {
+  color: var(--tinta-suau);
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+
+  .list::before {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    column-gap: 18px;
+    text-align: left;
+    align-items: start;
+  }
+
+  .num {
+    width: 70px;
+    height: 70px;
+    font-size: 2.6rem;
+    grid-row: span 2;
+    margin: 0;
+  }
+}

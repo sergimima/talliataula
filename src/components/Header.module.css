@@ -1,0 +1,255 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(244, 239, 223, 0.94);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 24px rgba(59, 46, 34, 0.08);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: var(--header-h);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: 58px;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.logo:hover img {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.logoText {
+  font-family: var(--font-titol);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--tinta);
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText small {
+  font-family: var(--font-text);
+  font-size: 0.72rem;
+  color: var(--tinta-suau);
+  margin-top: 4px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav ul {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--tinta-suau);
+  position: relative;
+}
+
+.nav ul a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--verd-clar);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav ul a:hover {
+  color: var(--tinta);
+}
+
+.nav ul a:hover::after {
+  transform: scaleX(1);
+}
+
+.cta {
+  padding: 0.7em 1.3em;
+  font-size: 0.95rem;
+}
+
+.lang {
+  display: flex;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lang span,
+.lang a {
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.lang span {
+  background: var(--verd-clar);
+  color: var(--verd-fosc);
+}
+
+.lang a {
+  color: var(--tinta-suau);
+}
+
+.lang a:hover {
+  color: var(--terra);
+}
+
+.burger {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--paper-light);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  position: relative;
+  z-index: 60;
+}
+
+.burgerLines,
+.burgerLines::before,
+.burgerLines::after {
+  position: absolute;
+  left: 13px;
+  width: 22px;
+  height: 2.5px;
+  border-radius: 3px;
+  background: var(--tinta);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.burgerLines {
+  top: 23px;
+}
+
+.burgerLines::before,
+.burgerLines::after {
+  content: "";
+  left: 0;
+}
+
+.burgerLines::before {
+  top: -7px;
+}
+
+.burgerLines::after {
+  top: 7px;
+}
+
+.burger[aria-expanded="true"] .burgerLines {
+  background: transparent;
+}
+
+.burger[aria-expanded="true"] .burgerLines::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger[aria-expanded="true"] .burgerLines::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 1060px) {
+  .nav ul {
+    gap: 16px;
+  }
+
+  .logoText small {
+    display: none;
+  }
+}
+
+@media (max-width: 940px) {
+  /* backdrop-filter crearía un contenedor para el menú fijo y lo recortaría */
+  .scrolled {
+    backdrop-filter: none;
+    background: var(--paper);
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    flex-direction: column;
+    justify-content: center;
+    gap: 34px;
+    background: var(--paper);
+    padding: 90px var(--gutter) 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+  }
+
+  .nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .nav ul a {
+    font-family: var(--font-titol);
+    font-size: 2rem;
+    color: var(--tinta);
+  }
+
+  .cta {
+    font-size: 1.05rem;
+    padding: 0.95em 1.7em;
+  }
+}
+
+@media (max-width: 420px) {
+  .logoText {
+    font-size: 1.35rem;
+  }
+
+  .logo img {
+    width: 48px;
+  }
+}

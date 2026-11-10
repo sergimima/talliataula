@@ -1,0 +1,81 @@
+.section {
+  background: linear-gradient(180deg, transparent 0, var(--paper-deep) 18%, var(--paper-deep) 82%, transparent 100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(36px, 6vw, 80px);
+  align-items: center;
+}
+
+.visual {
+  position: relative;
+  padding: 40px 60px 80px;
+}
+
+.frameWrap {
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 813 / 1107;
+  transform: rotate(-3deg);
+}
+
+.frameArt {
+  object-fit: contain;
+}
+
+.photo {
+  position: absolute;
+  inset: 11.5% 13% 11% 12.5%;
+  overflow: hidden;
+}
+
+.ing {
+  position: absolute;
+  height: auto;
+  filter: drop-shadow(0 10px 12px rgba(59, 46, 34, 0.2));
+  pointer-events: none;
+}
+
+.pa {
+  width: clamp(110px, 13vw, 170px);
+  left: 0;
+  bottom: 10px;
+  transform: rotate(-8deg);
+}
+
+.pernil {
+  width: clamp(100px, 12vw, 160px);
+  left: clamp(70px, 10vw, 130px);
+  bottom: -14px;
+  transform: rotate(6deg);
+}
+
+.oli {
+  width: clamp(70px, 8vw, 110px);
+  right: 6px;
+  bottom: 30px;
+  transform: rotate(6deg);
+}
+
+.tom {
+  width: clamp(80px, 9vw, 120px);
+  right: 0;
+  top: 10px;
+  transform: rotate(-10deg);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    padding: 20px 30px 70px;
+  }
+}

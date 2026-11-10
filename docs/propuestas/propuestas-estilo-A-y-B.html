@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tall i a Taula · Propostes d'estil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Mali:wght@400;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EFDF; --paper-2:#EDE5CF; --verd:#5E9A49; --verd-fosc:#3F6E30; --verd-clar:#C7DDBF;
+    --terra:#B8582B; --terra-suau:#D2754A; --crema:#E6DCC1; --tinta:#3B2E22; --tinta-suau:#7a6a50;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2b2520;color:var(--tinta);font-family:system-ui,sans-serif;padding:28px 16px 80px}
+  .intro{max-width:1100px;margin:0 auto 26px;color:#f3ead6}
+  .intro h1{font-family:"Fraunces",serif;font-weight:600;font-size:28px;margin-bottom:6px}
+  .intro p{color:#cbbfa6;font-size:15px;line-height:1.5}
+  .opt{max-width:1100px;margin:0 auto 46px}
+  .opt-head{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#f3ead6;margin-bottom:12px;flex-wrap:wrap}
+  .opt-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:22px}
+  .opt-head h2 span{display:inline-block;background:var(--terra);color:#fff;border-radius:6px;padding:2px 10px;margin-right:10px;font-family:system-ui;font-size:15px;vertical-align:3px}
+  .opt-head p{color:#cbbfa6;font-size:14px;max-width:560px}
+  .pick{cursor:pointer;background:transparent;color:#f3ead6;border:1.5px solid #8a7a5f;border-radius:999px;padding:9px 18px;font-size:14px}
+  .pick:hover{border-color:#f3ead6}
+  .opt.selected .pick{background:var(--verd);border-color:var(--verd);color:#fff}
+  .opt.selected .frame{outline:3px solid var(--verd);outline-offset:4px}
+  .frame{border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .bar{background:#e9e4da;height:30px;display:flex;align-items:center;gap:6px;padding:0 12px}
+  .bar i{width:10px;height:10px;border-radius:50%;background:#cfc6b6;display:block}
+  .bar b{margin-left:14px;font-weight:400;font-size:12px;color:#8a8070;background:#f6f2ea;border-radius:6px;padding:3px 12px}
+
+  /* ============ A · Evolució fidel ============ */
+  .A{background:var(--paper);font-family:"Mali",cursive;position:relative;overflow:hidden}
+  .A::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .22  0 0 0 .18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+  .A nav{display:flex;align-items:center;justify-content:space-between;padding:18px 44px;position:relative}
+  .A nav img{height:54px}
+  .A nav ul{display:flex;gap:26px;list-style:none;font-size:14px;color:var(--tinta-suau)}
+  .A nav .cta{background:var(--terra);color:#fff;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14px}
+  .A .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;padding:26px 44px 70px;position:relative}
+  .A .hand{font-family:"Gochi Hand",cursive}
+  .A .kicker{font-family:"Gochi Hand";color:var(--verd);font-size:24px;transform:rotate(-2deg);display:inline-block}
+  .A h3.big{font-family:"Gochi Hand";font-weight:400;font-size:66px;line-height:.98;color:var(--tinta);margin:10px 0 18px}
+  .A h3.big em{font-style:normal;color:var(--terra);position:relative;white-space:nowrap}
+  .A h3.big em::after{content:"";position:absolute;left:-4px;right:-6px;bottom:2px;height:12px;background:var(--verd-clar);z-index:-1;border-radius:6px;transform:rotate(-1.5deg)}
+  .A .lead{font-size:17px;line-height:1.65;color:var(--tinta-suau);max-width:440px}
+  .A .btns{display:flex;gap:14px;margin-top:26px;align-items:center}
+  .A .btn{background:var(--terra);color:#fff;border-radius:999px;padding:14px 26px;font-weight:600;box-shadow:0 6px 0 #8f411f}
+  .A .btn2{color:var(--verd-fosc);font-weight:600;border-bottom:2px dashed var(--verd);padding-bottom:2px}
+  .A .stack{position:relative;height:430px}
+  .A .pol{position:absolute;background:#fffdf7;padding:12px 12px 44px;box-shadow:0 14px 30px rgba(59,46,34,.22);border-radius:3px}
+  .A .pol img{display:block;width:100%;height:100%;object-fit:cover}
+  .A .pol figcaption{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-family:"Gochi Hand";font-size:20px;color:var(--tinta-suau)}
+  .A .p1{width:300px;height:340px;right:40px;top:10px;transform:rotate(4deg)}
+  .A .p2{width:230px;height:250px;left:10px;top:150px;transform:rotate(-6deg)}
+  .A .tape{position:absolute;width:90px;height:26px;background:rgba(199,221,191,.85);top:-12px;left:50%;margin-left:-45px;transform:rotate(-4deg)}
+  .A .romer{position:absolute;width:150px;opacity:.9}
+  .A .r1{left:-30px;top:96px;transform:rotate(-30deg)}
+  .A .r2{right:-20px;bottom:30px;transform:rotate(160deg)}
+  .A .arrow{position:absolute;left:250px;top:90px;font-family:"Gochi Hand";font-size:22px;color:var(--terra);transform:rotate(-8deg)}
+  .A .strip{background:var(--verd);color:#fff;display:flex;justify-content:center;gap:48px;padding:16px;font-family:"Gochi Hand";font-size:22px;position:relative}
+  .A .joan{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;padding:70px 44px;align-items:center;position:relative}
+  .A .joan .ph{position:relative}
+  .A .joan .ph img{width:100%;height:340px;object-fit:cover;border-radius:180px 180px 16px 16px;box-shadow:0 14px 30px rgba(59,46,34,.2)}
+  .A .joan .sign{position:absolute;bottom:-20px;right:-10px;background:var(--paper);font-family:"Gochi Hand";font-size:30px;color:var(--terra);padding:4px 16px;transform:rotate(-5deg);border-radius:8px}
+  .A .joan h4{font-family:"Gochi Hand";font-weight:400;font-size:46px;margin-bottom:14px}
+  .A .joan p{font-size:16px;line-height:1.75;color:var(--tinta-suau);margin-bottom:12px}
+  .A .ingr{display:flex;gap:16px;margin-top:18px}
+  .A .ingr img{width:76px;height:76px;object-fit:contain}
+  .A .testi{margin:0 44px 70px;background:#fffaf0;border:2px dashed var(--crema);border-radius:20px;padding:36px 44px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;position:relative}
+  .A .testi img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:6px solid var(--verd-clar)}
+  .A .testi q{font-family:"Gochi Hand";font-size:30px;line-height:1.2;color:var(--tinta);quotes:"«" "»"}
+  .A .testi small{display:block;margin-top:10px;font-size:14px;color:var(--tinta-suau)}
+
+  /* ============ B · Editorial càlid ============ */
+  .B{background:#FBF7EE;font-family:"Lora",serif;color:#2f261d}
+  .B .hero{position:relative;height:620px;display:flex;flex-direction:column}
+  .B .hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .B .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,20,12,.45) 0%,rgba(30,20,12,.05) 35%,rgba(42,26,14,.78) 100%)}
+  .B nav{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:22px 48px;color:#fbf3e3}
+  .B nav .logo{font-family:"Fraunces";font-size:22px;letter-spacing:.02em}
+  .B nav .logo small{font-family:"Gochi Hand";font-size:18px;color:#f1c9a8;margin-left:8px}
+  .B nav ul{display:flex;gap:28px;list-style:none;font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-family:system-ui;font-weight:500;opacity:.9}
+  .B .hero .txt{position:relative;z-index:2;margin-top:auto;padding:0 48px 56px;color:#fbf3e3;max-width:820px}
+  .B .hand{font-family:"Gochi Hand";color:#f1c9a8;font-size:26px;transform:rotate(-2deg);display:inline-block}
+  .B h3.big{font-family:"Fraunces";font-weight:400;font-size:68px;line-height:1.02;margin:8px 0 18px;letter-spacing:-.01em}
+  .B h3.big em{font-style:italic;color:#f1c9a8}
+  .B .lead{font-size:18px;line-height:1.6;max-width:540px;opacity:.92}
+  .B .btns{display:flex;gap:16px;margin-top:26px;align-items:center}
+  .B .btn{background:#C8633A;color:#fff;border-radius:4px;padding:15px 28px;font-family:system-ui;font-weight:600;letter-spacing:.04em;font-size:14px;text-transform:uppercase}
+  .B .btn2{color:#fbf3e3;font-family:system-ui;font-size:14px;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(251,243,227,.6);padding-bottom:3px}
+  .B .intro2{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:80px 48px;align-items:center}
+  .B .eyebrow{font-family:system-ui;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C8633A;font-weight:600}
+  .B .intro2 h4{font-family:"Fraunces";font-weight:400;font-size:44px;line-height:1.1;margin:12px 0 18px}
+  .B .intro2 h4 em{font-style:italic;color:var(--verd-fosc)}
+  .B .intro2 p{font-size:17px;line-height:1.75;color:#5c4d3c;margin-bottom:12px}
+  .B .intro2 .sig{font-family:"Gochi Hand";font-size:32px;color:#C8633A;margin-top:8px}
+  .B .grid{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:200px 200px;gap:12px}
+  .B .grid img{width:100%;height:100%;object-fit:cover;border-radius:2px}
+  .B .grid img:first-child{grid-row:span 2}
+  .B .quote{background:#2f3a26;color:#f4ecd8;text-align:center;padding:76px 48px;position:relative}
+  .B .quote .mark{font-family:"Fraunces";font-size:120px;line-height:.4;color:#9cbf8c;display:block;height:46px}
+  .B .quote q{font-family:"Fraunces";font-style:italic;font-size:34px;line-height:1.35;max-width:780px;display:block;margin:0 auto;quotes:none}
+  .B .quote small{display:block;margin-top:22px;font-family:"Gochi Hand";font-size:24px;color:#d9b48f}
+  .B .ingr{display:flex;justify-content:center;gap:40px;padding:34px;background:#F3EAD6}
+  .B .ingr img{height:64px;object-fit:contain}
+
+  .note{max-width:1100px;margin:-28px auto 40px;color:#a99c82;font-size:13px}
+  @media(max-width:860px){
+    .A .hero,.A .joan,.B .intro2{grid-template-columns:1fr}
+    .A h3.big,.B h3.big{font-size:46px}
+    .A nav ul,.B nav ul{display:none}
+  }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Dues direccions per a la nova web</h1>
+    <p>Totes dues fan servir les fotos, el logo i els colors actuals. Fixa't en la sensació general, no en els textos (són d'exemple, el testimoni també). Pots clicar «M'agrada aquesta» en la que et faci dir «ostia, vull això», o comentar què agafaries de cadascuna.</p>
+  </div>
+
+  <!-- ============ OPCIÓ A ============ -->
+  <section class="opt" data-choice="A-evolucio-fidel" onclick="toggleSelect(this)">
+    <div class="opt-head">
+      <div>
+        <h2><span>A</span>Evolució fidel · «casa de poble»</h2>
+        <p>La web actual, crescuda: lletra feta a mà, paper, polaroids, romer dibuixat. Proper, divertit, artesà.</p>
+      </div>
+      <button class="pick">M'agrada aquesta</button>
+    </div>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><b>talliataula.com</b></div>
+      <div class="A">
+        <nav>
+          <img src="img/logo.webp" alt="Tall i a Taula">
+          <ul><li>Qui som</li><li>L'experiència</li><li>Galeria</li><li>Què inclou</li></ul>
+          <span class="cta">Demaneu pressupost</span>
+        </nav>
+        <div class="hero">
+          <img class="romer r1" src="img/romer.webp" alt="">
+          <div>
+            <span class="kicker">Tall de pernil en directe · casaments i esdeveniments</span>
+            <h3 class="big">El vostre dia,<br>un record per <em>assaborir</em>.</h3>
+            <p class="lead">Soc en Joan. Porto el pernil, el ganivet i les ganes perquè els vostres convidats en parlin durant anys.</p>
+            <div class="btns"><span class="btn">Explica'ns el vostre dia</span><span class="btn2">Veure com treballo</span></div>
+          </div>
+          <div class="stack">
+            <figure class="pol p1"><span class="tape"></span><img src="img/foto-1.webp" alt=""><figcaption>en directe, davant vostre</figcaption></figure>
+            <figure class="pol p2"><img src="img/foto-2.webp" alt=""><figcaption>tallat a mà</figcaption></figure>
+          </div>
+          <img class="romer r2" src="img/romer.webp" alt="">
+        </div>
+        <div class="strip"><span>✿ Pernil ibèric seleccionat</span><span>✿ Tall artesà</span><span>✿ Muntatge inclòs</span></div>
+        <div class="joan">
+          <div class="ph"><img src="img/foto-3.webp" alt=""><span class="sign">— en Joan</span></div>
+          <div>
+            <h4>Els petits detalls fan gran un dia.</h4>
+            <p>Cada pernil el trio pel seu punt de curació. Cada llesca, fina i amb paciència. I mentre tallo, xerro amb els vostres convidats: això també forma part del servei.</p>
+            <p>Pa amb tomàquet, oli de la terra i un bon pernil. No cal res més per fer-ho memorable.</p>
+            <div class="ingr"><img src="img/pa.webp" alt=""><img src="img/tomaquets.webp" alt=""><img src="img/oli.webp" alt=""><img src="img/pernil-llesques.webp" alt=""></div>
+          </div>
+        </div>
+        <div class="testi">
+          <img src="img/amics.webp" alt="">
+          <div><q>La gent encara ens parla d'en Joan. Va ser el racó més ple de tota la boda!</q><small>Laia &amp; Marc · Casament a l'Empordà (text d'exemple)</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPCIÓ B ============ -->
+  <section class="opt" data-choice="B-editorial-calid" onclick="toggleSelect(this)">
+    <div class="opt-head">
+      <div>
+        <h2><span>B</span>Editorial càlid · «revista de bodes»</h2>
+        <p>Foto a pantalla completa i una lletra amb serif elegant; la lletra a mà només com a detall. Més «boda», més premium, igual de càlid.</p>
+      </div>
+      <button class="pick">M'agrada aquesta</button>
+    </div>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><b>talliataula.com</b></div>
+      <div class="B">
+        <div class="hero">
+          <img src="img/foto-3.webp" alt="">
+          <nav>
+            <span class="logo">Tall i a Taula <small>by Joan</small></span>
+            <ul><li>Qui som</li><li>Experiència</li><li>Galeria</li><li>Pressupost</li></ul>
+          </nav>
+          <div class="txt">
+            <span class="hand">Tallador de pernil per a casaments</span>
+            <h3 class="big">El vostre dia, un record<br>per <em>assaborir</em>.</h3>
+            <p class="lead">Pernil ibèric tallat a mà, en directe, davant dels vostres convidats. Un ritual que es converteix en el racó preferit de la festa.</p>
+            <div class="btns"><span class="btn">Demaneu pressupost</span><span class="btn2">Descobriu l'experiència</span></div>
+          </div>
+        </div>
+        <div class="intro2">
+          <div>
+            <span class="eyebrow">Qui som</span>
+            <h4>L'art del tall, en <em>els moments que importen</em>.</h4>
+            <p>Soc en Joan. Trio cada pernil pel seu punt de curació i el tallo amb calma, llesca a llesca, mentre els vostres convidats s'hi acosten i hi fan petar la xerrada.</p>
+            <p>Muntatge, presentació i desmuntatge inclosos. Vosaltres només heu de gaudir.</p>
+            <div class="sig">— Joan</div>
+          </div>
+          <div class="grid"><img src="img/foto-1.webp" alt=""><img src="img/foto-2.webp" alt=""><img src="img/amics.webp" alt=""></div>
+        </div>
+        <div class="quote">
+          <span class="mark">“</span>
+          <q>La gent encara ens parla d'en Joan. Va ser el racó més ple de tota la boda.</q>
+          <small>Laia &amp; Marc · Casament a l'Empordà (text d'exemple)</small>
+        </div>
+        <div class="ingr"><img src="img/pa.webp" alt=""><img src="img/tomaquets.webp" alt=""><img src="img/oli.webp" alt=""><img src="img/pernil-llesques.webp" alt=""></div>
+      </div>
+    </div>
+  </section>
+  <p class="note">Bocetos ràpids per triar direcció; la web real tindrà animacions suaus, galeria completa i formulari.</p>
+</body>
+</html>
