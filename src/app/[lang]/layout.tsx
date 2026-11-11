@@ -60,7 +60,9 @@ function jsonLd(lang: Locale, description: string) {
     image: `${site.url}/og.jpg`,
     logo: `${site.url}/il/logo-joan.webp`,
     telephone: site.phone.replace(/\s/g, ""),
-    sameAs: [site.instagram.url],
+    sameAs: [site.instagram.url, site.googleMaps],
+    hasMap: site.googleMaps,
+    email: site.titular.email,
     areaServed: { "@type": "AdministrativeArea", name: site.areaServed },
     founder: { "@type": "Person", name: site.person },
     makesOffer: {

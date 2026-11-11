@@ -1,7 +1,7 @@
 /**
  * Datos del negocio. Todo lo que se muestra en la web y en los datos estructurados sale de aquí.
- * Los campos de `titular` son los datos legales del responsable (aviso legal y privacidad):
- * se muestran solo si están rellenados.
+ * `titular` son los datos legales del responsable (aviso legal y privacidad). Son públicos;
+ * las variables de entorno solo sirven para sobrescribirlos sin tocar el código.
  */
 export const site = {
   name: "Tall i a Taula",
@@ -16,10 +16,12 @@ export const site = {
     handle: "@Talliataula",
     url: "https://www.instagram.com/Talliataula",
   },
+  /** Ficha de Google Business Profile (Google Maps). */
+  googleMaps: "https://maps.google.com/?cid=7140626089178580949",
   titular: {
-    nombreLegal: process.env.NEXT_PUBLIC_TITULAR_NOMBRE ?? "",
-    nif: process.env.NEXT_PUBLIC_TITULAR_NIF ?? "",
-    domicilio: process.env.NEXT_PUBLIC_TITULAR_DOMICILIO ?? "",
-    email: process.env.NEXT_PUBLIC_CONTACTE_EMAIL ?? "",
+    nombreLegal: process.env.NEXT_PUBLIC_TITULAR_NOMBRE || "Joan Jawo Marquez",
+    nif: process.env.NEXT_PUBLIC_TITULAR_NIF || "41642856E",
+    domicilio: process.env.NEXT_PUBLIC_TITULAR_DOMICILIO || "C/ Ribalta, 8, 17130 L'Escala (Girona)",
+    email: process.env.NEXT_PUBLIC_CONTACTE_EMAIL || "joanjjm6@gmail.com",
   },
 } as const;

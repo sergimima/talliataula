@@ -35,6 +35,11 @@ export function Footer({ lang, dict }: Props) {
                 Instagram {site.instagram.handle}
               </a>
             </li>
+            <li>
+              <a href={site.googleMaps} target="_blank" rel="noopener noreferrer">
+                Google Maps
+              </a>
+            </li>
           </ul>
         </div>
         <div>

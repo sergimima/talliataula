@@ -90,7 +90,7 @@ const ca = {
       { title: "Tall artesanal", text: "Tall en directe, amb tècnica, precisió i dedicació." },
       { title: "Presentació cuidada", text: "Una estació elegant, amb tot el material necessari per gaudir de cada tall." },
       { title: "Muntatge i desmuntatge", text: "Preparem l'espai de treball abans del servei i recollim el material en acabar." },
-      { title: "Trasllat", text: "Ens desplacem a qualsevol punt de Catalunya. Les condicions es concreten segons la ubicació." },
+      { title: "Trasllat", text: "Ens desplacem a qualsevol punt de Catalunya. El desplaçament es calcula a 0,40 € per quilòmetre." },
     ],
   },
   gallery: {

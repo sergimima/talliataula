@@ -92,7 +92,7 @@ const es: Dictionary = {
       { title: "Corte artesano", text: "Corte en directo, con técnica, precisión y dedicación." },
       { title: "Presentación cuidada", text: "Una estación elegante, con todo el material necesario para disfrutar de cada corte." },
       { title: "Montaje y desmontaje", text: "Preparamos el espacio de trabajo antes del servicio y recogemos el material al terminar." },
-      { title: "Desplazamiento", text: "Nos desplazamos a cualquier punto de Cataluña. Las condiciones se concretan según la ubicación." },
+      { title: "Desplazamiento", text: "Nos desplazamos a cualquier punto de Cataluña. El desplazamiento se calcula a 0,40 € por kilómetro." },
     ],
   },
   gallery: {
