@@ -53,8 +53,13 @@ export default async function Privacitat({ params }: PageProps<"/[lang]/privacit
             hem atès correctament els vostres drets, podeu presentar una reclamació a l&apos;Agència Espanyola de Protecció de Dades
             (aepd.es).
           </p>
-          <h2>Galetes</h2>
+          <h2>Galetes i estadístiques</h2>
           <p>Aquest web no utilitza galetes de seguiment, publicitat ni analítica.</p>
+          <p>
+            Per saber quantes visites rebem i d&apos;on arriben, fem servir estadístiques anònimes (Umami) allotjades al nostre
+            propi servidor. No fan servir galetes, no guarden l&apos;adreça IP ni cap dada que us identifiqui, i no es comparteixen
+            amb tercers.
+          </p>
         </>
       ) : (
         <>
@@ -88,8 +93,12 @@ export default async function Privacitat({ params }: PageProps<"/[lang]/privacit
             que no hemos atendido correctamente vuestros derechos, podéis presentar una reclamación ante la Agencia Española de
             Protección de Datos (aepd.es).
           </p>
-          <h2>Cookies</h2>
+          <h2>Cookies y estadísticas</h2>
           <p>Esta web no utiliza cookies de seguimiento, publicidad ni analítica.</p>
+          <p>
+            Para saber cuántas visitas recibimos y de dónde llegan, usamos estadísticas anónimas (Umami) alojadas en nuestro propio
+            servidor. No usan cookies, no guardan la dirección IP ni ningún dato que os identifique, y no se comparten con terceros.
+          </p>
         </>
       )}
     </LegalPage>

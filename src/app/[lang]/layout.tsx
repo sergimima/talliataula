@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Gochi_Hand, Mali } from "next/font/google";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { site } from "@/config/site";
 import { hasLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -8,6 +9,8 @@ import "@/styles/globals.css";
 
 const gochi = Gochi_Hand({ weight: "400", subsets: ["latin"], variable: "--font-gochi", display: "swap" });
 const mali = Mali({ weight: ["400", "600"], subsets: ["latin"], variable: "--font-mali", display: "swap" });
+
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -91,6 +94,15 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(lang, dict.meta.description)).replace(/</g, "\\u003c") }}
         />
         {children}
+        {umamiWebsiteId && (
+          // Estadísticas anónimas sin cookies; solo cuentan en el dominio de producción
+          <Script
+            src="/api/st/script.js"
+            data-website-id={umamiWebsiteId}
+            data-domains={new URL(site.url).hostname}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

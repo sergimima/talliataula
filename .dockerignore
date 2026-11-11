@@ -12,3 +12,7 @@ scripts
 Dockerfile
 docker-compose.yml
 .dockerignore
+umami.env
+umami.env.example
+umami.env
+umami.env.example

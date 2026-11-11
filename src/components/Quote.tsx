@@ -32,11 +32,11 @@ export function Quote({ lang, dict }: { lang: Locale; dict: Dictionary["quote"] 
           <Reveal className={styles.direct} delay={0.15}>
             <h3>{dict.orTitle}</h3>
             <div className={styles.directButtons}>
-              <a className="btn btn-green" href={wa} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-green" href={wa} target="_blank" rel="noopener noreferrer" data-umami-event="whatsapp" data-umami-event-lloc="pressupost">
                 <WhatsAppIcon />
                 {dict.whatsapp}
               </a>
-              <a className="btn btn-ghost" href={site.phoneHref}>
+              <a className="btn btn-ghost" href={site.phoneHref} data-umami-event="trucada" data-umami-event-lloc="pressupost">
                 {dict.call}: {site.phone}
               </a>
             </div>

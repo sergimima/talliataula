@@ -48,3 +48,8 @@ next-env.d.ts
 
 # capturas de revisión
 /.playwright-mcp/
+docs/propuestas/propuestas-fuentes-talliataula.html
+
+# secretos de Umami
+/umami.env
+docs/propuestas/fuentes.html

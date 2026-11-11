@@ -69,6 +69,17 @@ docker compose up -d --build   # http://127.0.0.1:3011
 - `.env.local` llega al build como *secreto de BuildKit*, porque las variables `NEXT_PUBLIC_*` se incrustan en las páginas estáticas. No queda guardado en la imagen. En ejecución se carga con `env_file`.
 - Si cambias una variable `NEXT_PUBLIC_*`, reconstruye con `--build`. Las de Resend basta con reiniciar: `docker compose up -d`.
 
+### Estadísticas (Umami)
+
+Estadísticas anónimas y sin cookies, así que no hace falta banner. Van en el mismo compose (`umami` + `umami-db`).
+
+1. `cp umami.env.example umami.env` y rellenar las contraseñas y claves (`openssl rand -hex 32`). `umami.env` no se sube a git.
+2. `docker compose up -d umami umami-db`. El panel queda en `http://127.0.0.1:3012`; publicarlo con el proxy inverso como `stats.talliataula.com`.
+3. Entrar con `admin` / `umami` y **cambiar la contraseña enseguida**. Crear la web `talliataula.com` y copiar su *Website ID*.
+4. Poner `NEXT_PUBLIC_UMAMI_WEBSITE_ID=<id>` en `.env.local` y reconstruir la web: `docker compose up -d --build web`.
+
+La web sirve el script y recibe los envíos en su propio dominio (`/api/st/*`) y los reenvía a Umami por la red interna, así que los bloqueadores no los cortan. Solo cuenta visitas en `talliataula.com`, no en local. Eventos que se registran: `whatsapp` y `trucada` (con el lugar del botón: `pressupost`, `peu` o `flotant`), `instagram` y `sollicitud-enviada` (formulario enviado).
+
 ## Despliegue
 
 Si no se usa Docker, lo recomendado es Vercel: importar el repositorio, añadir las variables de entorno y apuntar el dominio `talliataula.com`. Si se mantiene `talliataula.cat`, conviene redirigirlo con un 301 al `.com` para no duplicar contenido.

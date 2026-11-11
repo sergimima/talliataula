@@ -23,15 +23,23 @@ export function Footer({ lang, dict }: Props) {
           <h2 className={styles.h}>{dict.footer.contact}</h2>
           <ul className={styles.list}>
             <li>
-              <a href={site.phoneHref}>{site.phone}</a>
+              <a href={site.phoneHref} data-umami-event="trucada" data-umami-event-lloc="peu">
+                {site.phone}
+              </a>
             </li>
             <li>
-              <a href={whatsappUrl(dict.quote.whatsappText)} target="_blank" rel="noopener noreferrer">
+              <a
+                href={whatsappUrl(dict.quote.whatsappText)}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-umami-event="whatsapp"
+                data-umami-event-lloc="peu"
+              >
                 WhatsApp
               </a>
             </li>
             <li>
-              <a href={site.instagram.url} target="_blank" rel="noopener noreferrer">
+              <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" data-umami-event="instagram">
                 Instagram {site.instagram.handle}
               </a>
             </li>

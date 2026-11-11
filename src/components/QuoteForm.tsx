@@ -25,6 +25,8 @@ export function QuoteForm({ lang, dict, whatsappHref }: Props) {
 
   useEffect(() => {
     if (state.status !== "idle") statusRef.current?.focus();
+    // Conversión para las estadísticas (Umami); no hace nada si el script no está cargado.
+    if (state.status === "success") window.umami?.track("sollicitud-enviada");
   }, [state]);
 
   if (state.status === "success") {
