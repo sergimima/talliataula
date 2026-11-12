@@ -20,8 +20,9 @@ export const site = {
   googleMaps: "https://maps.google.com/?cid=7140626089178580949",
   titular: {
     nombreLegal: process.env.NEXT_PUBLIC_TITULAR_NOMBRE || "Joan Jawo Marquez",
-    nif: process.env.NEXT_PUBLIC_TITULAR_NIF || "41642856E",
-    domicilio: process.env.NEXT_PUBLIC_TITULAR_DOMICILIO || "C/ Ribalta, 8, 17130 L'Escala (Girona)",
+    // NIF y domicilio sin valor por defecto: solo se muestran si se rellenan las variables.
+    nif: process.env.NEXT_PUBLIC_TITULAR_NIF || "",
+    domicilio: process.env.NEXT_PUBLIC_TITULAR_DOMICILIO || "",
     email: process.env.NEXT_PUBLIC_CONTACTE_EMAIL || "joanjjm6@gmail.com",
   },
 } as const;
