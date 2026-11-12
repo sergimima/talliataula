@@ -39,7 +39,9 @@
 
 .logoText {
   font-family: var(--font-titol);
-  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 1.3rem;
   line-height: 1;
   color: var(--tinta);
   display: flex;
@@ -234,7 +236,8 @@
 
   .nav ul a {
     font-family: var(--font-titol);
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
     color: var(--tinta);
   }
 
@@ -246,7 +249,7 @@
 
 @media (max-width: 420px) {
   .logoText {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
   }
 
   .logo img {

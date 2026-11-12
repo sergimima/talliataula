@@ -12,11 +12,13 @@
 }
 
 .kicker {
-  font-family: var(--font-titol);
+  font-family: var(--font-text);
+  font-weight: 700;
   color: var(--verd);
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
-  line-height: 1.25;
-  transform: rotate(-2deg);
+  font-size: clamp(0.76rem, 1.1vw, 0.86rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.5;
   transform-origin: left;
   margin-bottom: 0.6em;
   max-width: 24em;
@@ -24,8 +26,8 @@
 }
 
 .title {
-  font-size: clamp(3rem, 7.4vw, 5.4rem);
-  line-height: 0.98;
+  font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+  line-height: 1.02;
   margin-bottom: 0.32em;
   animation: fadeUp 0.9s 0.1s ease both;
 }
@@ -64,7 +66,7 @@
   right: 0;
   bottom: 10px;
   text-align: center;
-  font-family: var(--font-titol);
+  font-family: var(--font-ma);
   font-size: 1.35rem;
   color: var(--tinta-suau);
 }
@@ -171,7 +173,8 @@
 
 .stripList li {
   font-family: var(--font-titol);
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
   white-space: nowrap;
   padding-inline: 28px;
   display: flex;

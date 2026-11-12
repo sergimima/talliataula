@@ -14,8 +14,10 @@
   --tinta-suau: #6f5f47;
   --blanc: #fffdf7;
 
-  --font-titol: var(--font-gochi), "Gochi Hand", cursive;
-  --font-text: var(--font-mali), "Mali", system-ui, sans-serif;
+  /* Títulos: Bricolage Grotesque. Texto: Nunito. Toques a mano (firma, pies de foto): Gochi Hand. */
+  --font-titol: var(--font-bricolage), "Bricolage Grotesque", system-ui, sans-serif;
+  --font-text: var(--font-nunito), "Nunito", system-ui, sans-serif;
+  --font-ma: var(--font-gochi), "Gochi Hand", cursive;
 
   --radius: 18px;
   --shadow-photo: 0 14px 30px rgba(59, 46, 34, 0.22);
@@ -77,8 +79,9 @@ h2,
 h3,
 h4 {
   font-family: var(--font-titol);
-  font-weight: 400;
-  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
   margin: 0;
   color: var(--tinta);
 }
@@ -110,17 +113,17 @@ p {
 
 .eyebrow {
   display: inline-block;
-  font-family: var(--font-titol);
+  font-family: var(--font-text);
+  font-weight: 700;
   color: var(--verd);
-  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(0.78rem, 1.1vw, 0.86rem);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  transform: rotate(-1.5deg);
   margin-bottom: 0.4em;
 }
 
 .section-title {
-  font-size: clamp(2.3rem, 5.4vw, 3.6rem);
+  font-size: clamp(1.95rem, 4.4vw, 3rem);
   margin-bottom: 0.45em;
 }
 

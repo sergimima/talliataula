@@ -31,7 +31,7 @@
 }
 
 .card h3 {
-  font-size: clamp(1.7rem, 2.6vw, 2rem);
+  font-size: clamp(1.35rem, 2.1vw, 1.6rem);
   color: var(--verd-fosc);
   margin: 14px 0 10px;
 }
@@ -94,8 +94,8 @@
 .note {
   display: inline-block;
   margin-top: 14px;
-  font-family: var(--font-titol);
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 0.85rem;
   color: var(--terra);
   background: rgba(210, 117, 74, 0.12);
   padding: 2px 14px 4px;

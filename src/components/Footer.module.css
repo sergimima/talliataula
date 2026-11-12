@@ -38,7 +38,7 @@
 }
 
 .motto {
-  font-family: var(--font-titol);
+  font-family: var(--font-ma);
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   line-height: 1.15;
   color: #fff;
@@ -54,7 +54,7 @@
 }
 
 .h {
-  font-size: 1.6rem;
+  font-size: 1.15rem;
   color: var(--verd-titol);
   margin-bottom: 12px;
 }

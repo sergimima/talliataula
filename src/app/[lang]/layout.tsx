@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Gochi_Hand, Mali } from "next/font/google";
+import { Bricolage_Grotesque, Gochi_Hand, Nunito } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { site } from "@/config/site";
@@ -8,7 +8,9 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import "@/styles/globals.css";
 
 const gochi = Gochi_Hand({ weight: "400", subsets: ["latin"], variable: "--font-gochi", display: "swap" });
-const mali = Mali({ weight: ["400", "600"], subsets: ["latin"], variable: "--font-mali", display: "swap" });
+const bricolage = Bricolage_Grotesque({ subsets: ["latin"], axes: ["opsz"], variable: "--font-bricolage", display: "swap" });
+const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito", display: "swap" });
+
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
@@ -80,7 +82,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   return (
-    <html lang={lang} className={`${gochi.variable} ${mali.variable}`}>
+    <html lang={lang} className={`${bricolage.variable} ${nunito.variable} ${gochi.variable}`}>
       <head>
         {/* Marca que hay JS antes de pintar, para que las animaciones de entrada no parpadeen */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

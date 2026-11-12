@@ -33,7 +33,7 @@
 }
 
 .title {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-size: clamp(1.9rem, 4.2vw, 2.7rem);
   color: var(--verd);
   margin-bottom: 28px;
 }
@@ -59,7 +59,7 @@
 }
 
 .item h3 {
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   color: var(--terra);
   margin-bottom: 4px;
 }

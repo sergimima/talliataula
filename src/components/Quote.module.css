@@ -22,7 +22,7 @@
 }
 
 .needs h3 {
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   color: var(--terra);
   margin-bottom: 8px;
 }
@@ -31,10 +31,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: var(--font-titol);
-  font-size: 1.3rem;
+  font-size: 1.06rem;
   color: var(--tinta-suau);
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .needsRomer {
@@ -47,7 +46,7 @@
 }
 
 .direct h3 {
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   margin-bottom: 14px;
 }
 

@@ -202,7 +202,7 @@
 }
 
 .success h3 {
-  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.2rem);
   color: var(--verd-fosc);
   margin-bottom: 12px;
 }

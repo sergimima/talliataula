@@ -14,12 +14,12 @@
 }
 
 .title {
-  font-size: clamp(2.6rem, 6vw, 3.8rem);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
   margin: 18px 0 26px;
 }
 
 .body h2 {
-  font-size: 1.9rem;
+  font-size: 1.45rem;
   color: var(--verd-fosc);
   margin: 34px 0 10px;
 }

@@ -42,7 +42,8 @@
   width: 88px;
   height: 88px;
   font-family: var(--font-titol);
-  font-size: 3.2rem;
+  font-weight: 700;
+  font-size: 2.5rem;
   color: var(--verd);
   position: relative;
   margin-bottom: 14px;
@@ -72,7 +73,7 @@
 }
 
 .step h3 {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   color: var(--terra);
   margin-bottom: 8px;
 }
@@ -110,7 +111,7 @@
   .num {
     width: 70px;
     height: 70px;
-    font-size: 2.6rem;
+    font-size: 2.1rem;
     grid-row: span 2;
     margin: 0;
   }
