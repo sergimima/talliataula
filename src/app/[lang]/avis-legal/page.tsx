@@ -10,6 +10,11 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/avis-legal
   const dict = await getDictionary(lang);
   return {
     title: `${dict.legal.noticeTitle} · Tall i a Taula`,
+    description: lang === "ca"
+      ? "Avís legal del web de Tall i a Taula: dades del titular, condicions d'ús i propietat intel·lectual."
+      : "Aviso legal de la web de Tall i a Taula: datos del titular, condiciones de uso y propiedad intelectual.",
+    // Página obligatoria pero sin interés en Google: que no ocupe el lugar de la portada.
+    robots: { index: false, follow: true },
     alternates: { canonical: `/${lang}/avis-legal`, languages: { ca: "/ca/avis-legal", es: "/es/avis-legal" } },
   };
 }

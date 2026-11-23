@@ -10,6 +10,11 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/privacitat
   const dict = await getDictionary(lang);
   return {
     title: `${dict.legal.privacyTitle} · Tall i a Taula`,
+    description: lang === "ca"
+      ? "Política de privacitat de Tall i a Taula: com es tracten les dades del formulari de pressupost i les estadístiques del web."
+      : "Política de privacidad de Tall i a Taula: cómo se tratan los datos del formulario de presupuesto y las estadísticas de la web.",
+    // Página obligatoria pero sin interés en Google: que no ocupe el lugar de la portada.
+    robots: { index: false, follow: true },
     alternates: { canonical: `/${lang}/privacitat`, languages: { ca: "/ca/privacitat", es: "/es/privacitat" } },
   };
 }
